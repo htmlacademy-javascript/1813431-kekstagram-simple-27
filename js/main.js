@@ -1,26 +1,26 @@
 // Функция, возвращающая случайное целое число из переданного диапазона включительно.
 
-const randomNumber = function (minNumber, maxNumber) {
+function randomNumber (minNumber, maxNumber) {
+  if (minNumber < 0 || maxNumber < 0 || minNumber >= maxNumber) {
+    return NaN;
+  }
+
   const number = minNumber + Math.random() * (maxNumber - minNumber);
   return Math.round(number);
-};
+}
 
-randomNumber(1, 10);
+randomNumber(2, 10);
 
 // Функция для проверки максимальной длины строки.
 
-let message;
-
-const getMaxLength = function (string, maxString) {
-  if (string <= maxString) {
-    message = 'Строка проходит по длине';
-    return message;
+function checkMaxLength (string, maxString) {
+  if (string.length <= maxString) {
+    return true;
   } else {
-    message = 'Строка не проходит по длине';
-    return message;
+    return false;
   }
-};
+}
 
-getMaxLength(1, 5);
+checkMaxLength('строка', 10);
 
 
