@@ -14,7 +14,7 @@ randomNumber(2, 10);
 // Функция для проверки максимальной длины строки.
 
 function checkMaxLength (string, maxString) {
-  if (string.length <= maxString) {
+  if (typeof string === 'string' && string.length <= maxString) {
     return true;
   } else {
     return false;
