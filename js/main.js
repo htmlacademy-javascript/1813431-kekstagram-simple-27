@@ -9,7 +9,7 @@ function randomNumber (minNumber, maxNumber) {
   return Math.round(number);
 }
 
-randomNumber(2, 10);
+// randomNumber(2, 10);
 
 // Функция для проверки максимальной длины строки.
 
@@ -24,3 +24,26 @@ function checkMaxLength (string, maxString) {
 checkMaxLength('строка', 10);
 
 
+// const checkMaxLength = function (string, maxString) {
+//   if (typeof string === 'string') {
+//     return string.length <= maxString;
+//   } else {
+//     return 'Введите буквы, а не цифры';
+//   }
+// };
+
+// checkMaxLength('строка', 10);
+
+//! module4-task1
+
+const createPhoto = () => {
+  return {
+    id: randomNumber(1, 25),
+    url: 'photos/' + randomNumber(1, 25) + '.jpg',
+    description: '',
+    likes: randomNumber(15, 200),
+    comments: randomNumber(0, 200)
+  };
+};
+
+console.log(createDescription());
