@@ -46,4 +46,4 @@ const createPhoto = () => {
   };
 };
 
-console.log(createDescription());
+console.log(createPhoto());
