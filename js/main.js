@@ -36,14 +36,14 @@ checkMaxLength('строка', 10);
 
 //! module4-task1
 
-const createPhoto = () => {
-  return {
-    id: randomNumber(1, 25),
-    url: 'photos/' + randomNumber(1, 25) + '.jpg',
-    description: '',
-    likes: randomNumber(15, 200),
-    comments: randomNumber(0, 200)
-  };
-};
+const createPhoto = () => ({
+  id: randomNumber(1, 25),
+  url: 'photos/ ' + randomNumber(1, 25) + ' .jpg',
+  description: '',
+  likes: randomNumber(15, 200),
+  comments: randomNumber(0, 200)
+});
 
-console.log(createPhoto());
+const photoCards = Array.from({ length: 25 }, createPhoto);
+
+console.log(photoCards);
