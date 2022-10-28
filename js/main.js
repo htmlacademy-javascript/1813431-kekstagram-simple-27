@@ -36,10 +36,23 @@ checkMaxLength('строка', 10);
 
 //! module4-task1
 
+const getArray = function () {
+  for (let i = 0; i <= 25; i++) {
+    const someArray = [];
+    return someArray[i];
+  }
+};
+
+const descriptionsArray = ['Описание 1', 'Описание 2', 'Описание 3', 'Описание 4', 'Описание 5', ''];
+const getDescription = function () {
+  const descriptionIndex = Math.round(0 + Math.random() * ((descriptionsArray.length - 1) - 0));
+  return descriptionsArray[descriptionIndex];
+};
+
 const createPhoto = () => ({
-  id: randomNumber(1, 25),
-  url: 'photos/ ' + randomNumber(1, 25) + ' .jpg',
-  description: '',
+  id: getArray(),
+  url: `photos/ ${getArray()} .jpg`,
+  description: getDescription(),
   likes: randomNumber(15, 200),
   comments: randomNumber(0, 200)
 });
