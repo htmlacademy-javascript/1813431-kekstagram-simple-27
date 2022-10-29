@@ -36,13 +36,6 @@ checkMaxLength('строка', 10);
 
 //! module4-task1
 
-const getArray = function () {
-  for (let i = 0; i <= 25; i++) {
-    const someArray = [];
-    return someArray[i];
-  }
-};
-
 const descriptionsArray = ['Описание 1', 'Описание 2', 'Описание 3', 'Описание 4', 'Описание 5', ''];
 const getDescription = function () {
   const descriptionIndex = Math.round(0 + Math.random() * ((descriptionsArray.length - 1) - 0));
@@ -50,12 +43,19 @@ const getDescription = function () {
 };
 
 const createPhoto = () => ({
-  id: getArray(),
-  url: `photos/ ${getArray()} .jpg`,
+  id: index,
+  url: `photos/ ${index} .jpg`,
   description: getDescription(),
   likes: randomNumber(15, 200),
   comments: randomNumber(0, 200)
 });
+
+const arr = [];
+
+for (let index = 0; index < 25; index++) {
+  const object = createPhoto(index);
+  arr.push(object);
+}
 
 const photoCards = Array.from({ length: 25 }, createPhoto);
 
