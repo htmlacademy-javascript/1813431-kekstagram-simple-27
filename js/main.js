@@ -42,21 +42,21 @@ const getDescription = function () {
   return descriptionsArray[descriptionIndex];
 };
 
-const createPhoto = () => ({
-  id: index,
-  url: `photos/ ${index} .jpg`,
-  description: getDescription(),
-  likes: randomNumber(15, 200),
-  comments: randomNumber(0, 200)
-});
+function createPhoto(index) {
+  return {
+    id: index,
+    url: `photos/ ${index} .jpg`,
+    description: getDescription(),
+    likes: randomNumber(15, 200),
+    comments: randomNumber(0, 200)
+  };
+}
 
-const arr = [];
+const photoCards = [];
 
 for (let index = 0; index < 25; index++) {
   const object = createPhoto(index);
-  arr.push(object);
+  photoCards.push(object);
 }
 
-const photoCards = Array.from({ length: 25 }, createPhoto);
-
-console.log(photoCards);
+window.console.log(photoCards);
