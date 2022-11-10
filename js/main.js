@@ -9,4 +9,4 @@ import { createPhoto } from './create-photo.js';
 
 import { photoCards } from './util.js';
 
-// window.console.log(photoCards);
+window.console.log(photoCards);
