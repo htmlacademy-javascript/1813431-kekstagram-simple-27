@@ -1,9 +1,18 @@
-import { createPhoto } from './create-photo.js';
+function randomNumber (minNumber, maxNumber) {
+  if (minNumber < 0 || maxNumber < 0 || minNumber >= maxNumber) {
+    return NaN;
+  }
 
-const photoCards = [];
-for (let index = 0; index < 25; index++) {
-  const object = createPhoto(index);
-  photoCards.push(object);
+  const number = minNumber + Math.random() * (maxNumber - minNumber);
+  return Math.round(number);
 }
 
-export { photoCards };
+function checkMaxLength(string, maxString) {
+  if (typeof string === 'string' && string.length <= maxString) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export {randomNumber, checkMaxLength };
